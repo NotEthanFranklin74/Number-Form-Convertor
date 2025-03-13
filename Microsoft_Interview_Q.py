@@ -15,6 +15,16 @@ def word_to_number(word:str) -> int:
             int: The integer form of the number
     '''
     def word_formatter(user_input:str) -> list:
+        '''
+        Alters the inputted word by removing any whitespace, then removes all instances of and, commas,
+        and converts the string to lowercase. Then splits the string into a list to be translated
+        
+        Args:
+            user_input (str): The string that the user inputs to be translated
+        
+        Returns:
+            list: The list of the inputted string that needs to be translated
+        '''
         user_input = user_input.lower()
         user_input = user_input.strip()
         user_input = user_input.replace("and ", "")
