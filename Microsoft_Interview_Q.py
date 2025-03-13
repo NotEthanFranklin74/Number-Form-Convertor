@@ -14,12 +14,18 @@ def word_to_number(word:str) -> int:
         Returns:
             int: The integer form of the number
     '''
-    listOfWords = word.split()
+    def word_formatter(user_input:str):
+        user_input = user_input.lower()
+        user_input = user_input.strip()
+        user_input = user_input.replace("and ", "")
+        user_input = user_input.replace(",", "")
+        return user_input.split()
+    
+    word = word_formatter(word)
 
     result = 0
     temp = 0
     for word in listOfWords:
-        word = word.lower()
         if word in numbers:
             temp += numbers[word]
         elif word in teens:
@@ -37,3 +43,6 @@ def word_to_number(word:str) -> int:
             temp += numbers[word[:-4]] + 10
     result += temp
     return result
+
+
+print(word_to_number("one million, two hundred and thirty four thousand, five hundred and sixty seven"))
