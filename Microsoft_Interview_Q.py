@@ -14,14 +14,14 @@ def word_to_number(word:str) -> int:
         Returns:
             int: The integer form of the number
     '''
-    def word_formatter(user_input:str):
+    def word_formatter(user_input:str) -> list:
         user_input = user_input.lower()
         user_input = user_input.strip()
         user_input = user_input.replace("and ", "")
         user_input = user_input.replace(",", "")
         return user_input.split()
     
-    word = word_formatter(word)
+    listOfWords = word_formatter(word)
 
     result = 0
     temp = 0
